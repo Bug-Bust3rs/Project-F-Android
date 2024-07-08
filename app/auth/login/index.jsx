@@ -23,14 +23,14 @@ export default function login() {
   }
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      setValidate(true);
-      setTimeout(() => {
-        setValidate(false)
-      }, 3000)
-      return;
-    }
-    router.push('/home')
+    // if (!email || !password) {
+    //   setValidate(true);
+    //   setTimeout(() => {
+    //     setValidate(false)
+    //   }, 3000)
+    //   return;
+    // }
+    router.push('/main/spalsh')
     // await login({ email, password });
 
 
@@ -106,7 +106,7 @@ export default function login() {
                   <Image className='h-12 w-12 shadow-lg' source={require('../../../assets/images/githubl.png')} />
                   <Image className='h-12 w-12 shadow-lg' source={require('../../../assets/images/fb.png')} />
                 </View>
-              <TouchableOpacity className='bg-cyan-400 mt-5 px-2 py-3 rounded-2xl hover:bg-rose-400 cursor-pointer mb-[20px]'>
+              <TouchableOpacity onPress={handleLogin} className='bg-cyan-400 mt-5 px-2 py-3 rounded-2xl hover:bg-rose-400 cursor-pointer mb-[20px]'>
                 <Text className='text-center text-white text-base font-semibold'>Lets Go!</Text>
               </TouchableOpacity>
             </View>
@@ -115,7 +115,7 @@ export default function login() {
         }
         {
           !toogle &&
-          <View>
+          <View className=''>
 
             <View className='flex gap-5'>
               <View>
@@ -155,6 +155,7 @@ export default function login() {
                   onChangeText={setEmail}
                 />
               </View>
+
             </View>
 
             <TouchableOpacity className='bg-cyan-400 mt-7 px-2 py-3 rounded-2xl hover:bg-rose-400 cursor-pointer mb-[20px]'>
